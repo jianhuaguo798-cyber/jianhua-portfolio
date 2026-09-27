@@ -3,10 +3,14 @@
 基于原 `index-v2.html`：深色极光、粒子聚字、横向滚动大字、作品卡片与联系区。
 此仓库只包含该版本及所需静态资源。没有 Node 安装步骤，不依赖外部 CDN。
 
+- 网站：https://jianhuaguo798-cyber.github.io/jianhua-portfolio/
+- 代码：https://github.com/jianhuaguo798-cyber/jianhua-portfolio
+- PDF：https://jianhuaguo798-cyber.github.io/jianhua-portfolio/downloads/portfolio.pdf
+
 ## 本地预览
 
 ```sh
-git clone <本仓库的 GitHub URL>
+git clone https://github.com/jianhuaguo798-cyber/jianhua-portfolio.git
 cd jianhua-portfolio
 python3 -m http.server 8000 --bind 127.0.0.1
 ```
