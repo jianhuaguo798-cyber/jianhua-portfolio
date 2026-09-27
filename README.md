@@ -48,6 +48,12 @@ GitHub Pages 会在推送后自动发布静态资源。首次在仓库 Settings 
 
 示例 PDF 的生成脚本为 `scripts/create_demo_pdf.py`，只有重新生成示例时才需要 `reportlab`。
 
+## 匿名访问统计（待配置）
+
+浏览及下载点击事件的接入已准备，配置 Clarity 项目 ID 后生效。配置前不会收集或发送数据。项目创建、查看记录、事件含义以及排除自己的访问，见 [统计说明](docs/analytics.md)。
+
+开发校验：`node scripts/check_analytics.mjs`。本地事件预览使用 `?analytics=debug`，不会发送数据。
+
 ## 第三方库
 
 保留本地 vendor 文件原始版权注释：GSAP、ScrollTrigger、Lenis。网站代码与下载文件由仓库维护者管理。

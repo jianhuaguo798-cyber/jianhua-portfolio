@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/style-v2.css" />
   <link rel="stylesheet" href="assets/css/release.css" />
+  <link rel="stylesheet" href="assets/css/analytics.css" />
   <noscript><style>.loader{display:none!important}body.loading{overflow:auto}.hero-word-fallback{display:flex}</style></noscript>
 </head>
 <body class="loading">
@@ -34,13 +35,13 @@
       <a href="#works" data-hover>作品</a>
       <a href="#about" data-hover>关于</a>
       <a href="#contact" data-hover>联系</a>
-      <a class="nav-download" href="downloads/portfolio.pdf" download="郭建华-作品集-演示.pdf" data-hover>下载作品集 ↓</a>
+      <a class="nav-download" href="downloads/portfolio.pdf" download="郭建华-作品集-演示.pdf" data-track-download="portfolio_demo_v1" data-track-entry="header" data-hover>下载作品集 ↓</a>
     </nav>
   </header>
 
   <main>
 
-    <section class="hero" id="hero">
+    <section class="hero" id="hero" data-track-view="hero">
       <canvas id="fx-aurora" aria-hidden="true"></canvas>
       <canvas id="fx-fluid" aria-hidden="true"></canvas>
       <canvas id="fx-particles" data-text="作品集" aria-hidden="true"></canvas>
@@ -58,7 +59,7 @@
           <span class="line">用设计与动效，把想法讲成故事</span>
         </p>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="downloads/portfolio.pdf" download="郭建华-作品集-演示.pdf" data-hover>下载作品集 ↓</a>
+          <a class="btn btn-primary" href="downloads/portfolio.pdf" download="郭建华-作品集-演示.pdf" data-track-download="portfolio_demo_v1" data-track-entry="hero" data-hover>下载作品集 ↓</a>
           <a class="btn btn-ghost" href="#works" data-hover>浏览作品</a>
         </div>
         <p class="download-note">演示 PDF · 1 页</p>
@@ -81,7 +82,7 @@
       </div>
     </div>
 
-    <section class="section works" id="works">
+    <section class="section works" id="works" data-track-view="works">
       <div class="wrap">
         <div class="section-head">
           <span class="ghost-num" aria-hidden="true">01</span>
@@ -91,7 +92,7 @@
         </div>
 
         <div class="works-grid">
-          <article class="work-card" data-hover>
+          <article class="work-card" data-hover data-track-view="project_smart_home">
             <div class="work-cover">
               <div class="work-cover-inner g1"></div>
               <span class="cover-num">01</span>
@@ -102,7 +103,7 @@
             </div>
           </article>
 
-          <article class="work-card" data-hover>
+          <article class="work-card" data-hover data-track-view="project_shanhai">
             <div class="work-cover">
               <div class="work-cover-inner g2"></div>
               <span class="cover-num">02</span>
@@ -113,7 +114,7 @@
             </div>
           </article>
 
-          <article class="work-card" data-hover>
+          <article class="work-card" data-hover data-track-view="project_3d_film">
             <div class="work-cover">
               <div class="work-cover-inner g3"></div>
               <span class="cover-num">03</span>
@@ -124,7 +125,7 @@
             </div>
           </article>
 
-          <article class="work-card" data-hover>
+          <article class="work-card" data-hover data-track-view="project_data_web">
             <div class="work-cover">
               <div class="work-cover-inner g4"></div>
               <span class="cover-num">04</span>
@@ -138,7 +139,7 @@
       </div>
     </section>
 
-    <section class="section about" id="about">
+    <section class="section about" id="about" data-track-view="about">
       <div class="wrap">
         <div class="section-head">
           <span class="ghost-num" aria-hidden="true">02</span>
@@ -168,7 +169,7 @@
       </div>
     </section>
 
-    <section class="section contact" id="contact">
+    <section class="section contact" id="contact" data-track-view="contact">
       <canvas id="fx-waves" aria-hidden="true"></canvas>
       <div class="wrap contact-wrap">
         <span class="ghost-num ghost-center" aria-hidden="true">03</span>
@@ -177,15 +178,25 @@
           <span class="line">有项目想聊？</span>
         </h2>
         <p class="contact-sub">随时欢迎 —— 一起做点有意思的东西。</p>
-        <a class="btn-big magnetic" href="mailto:jianhuaguo798@gmail.com" data-hover>
+        <a class="btn-big magnetic" href="mailto:jianhuaguo798@gmail.com" data-track-contact data-clarity-mask="true" data-hover>
           <span class="magnetic-inner">jianhuaguo798@gmail.com</span>
         </a>
-        <div class="socials"><a href="downloads/portfolio.pdf" download="郭建华-作品集-演示.pdf" data-hover>下载作品集（演示 PDF） ↓</a></div>
+        <div class="socials"><a href="downloads/portfolio.pdf" download="郭建华-作品集-演示.pdf" data-track-download="portfolio_demo_v1" data-track-entry="footer" data-hover>下载作品集（演示 PDF） ↓</a></div>
         <p class="footer-note">© 2026 郭建华 · Portfolio V1.0</p>
+        <button class="analytics-settings" id="analytics-settings" type="button" hidden>访问统计设置</button>
       </div>
     </section>
 
   </main>
+
+  <aside class="analytics-choice" id="analytics-choice" aria-labelledby="analytics-title" hidden>
+    <h2 id="analytics-title">匿名访问统计</h2>
+    <p id="analytics-detail">使用 Microsoft Clarity 统计匿名浏览和下载点击，帮助改进作品展示。</p>
+    <div class="analytics-actions">
+      <button type="button" data-analytics-choice="allow">允许匿名统计</button>
+      <button type="button" data-analytics-choice="deny">不参与统计</button>
+    </div>
+  </aside>
 
   <div class="vignette" aria-hidden="true"></div>
   <div class="grain" aria-hidden="true"></div>
@@ -198,5 +209,7 @@
   <script src="assets/js/fx-particles-v2.js"></script>
   <script src="assets/js/fx-waves.js"></script>
   <script src="assets/js/main-v2.js"></script>
+  <script src="assets/js/analytics-config.js"></script>
+  <script src="assets/js/analytics.js"></script>
 </body>
 </html>
