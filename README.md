@@ -34,13 +34,13 @@ git commit -m "Update portfolio"
 git push origin main
 ```
 
-GitHub Actions 会将静态资源发布到 GitHub Pages。首次需在仓库 Settings → Pages → Source 选择 GitHub Actions。免费个人账号使用公开仓库；网站和发布的 PDF 会公开可访问。
+GitHub Pages 会在推送后自动发布静态资源。首次在仓库 Settings → Pages → Source 选择 Deploy from a branch，分支选 `main`，目录选 `/ (root)`。不需要自定义 Actions 工作流。免费个人账号使用公开仓库；网站和发布的 PDF 会公开可访问。
 
 `main` 保存最新版本，`v1.0.0` 标签保存首发版本。查看历史版本：`git switch --detach v1.0.0`。继续开发：`git switch main`。
 
 ## 校验
 
-`python3 scripts/check_site.py` 检查本地资源、锚点和 PDF 文件头，不需要安装依赖。发布工作流每次自动执行。
+提交前运行 `python3 scripts/check_site.py` 检查本地资源、锚点和 PDF 文件头，不需要安装依赖。
 
 示例 PDF 的生成脚本为 `scripts/create_demo_pdf.py`，只有重新生成示例时才需要 `reportlab`。
 
