@@ -1,0 +1,175 @@
+/* ============ 方案2 视觉强化层（在 style.css 之后加载） ============ */
+
+/* ---------- 入场加载 ---------- */
+
+.loader {
+  position: fixed; inset: 0; z-index: 300;
+  background: #05070d;
+  display: flex; align-items: center; justify-content: center;
+  clip-path: inset(0 0 0 0);
+}
+.loader-inner { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.loader-num {
+  font-size: clamp(64px, 10vw, 110px); font-weight: 800; line-height: 1;
+  background: linear-gradient(135deg, var(--cyan), var(--violet), var(--pink));
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+  font-variant-numeric: tabular-nums;
+}
+.loader-bar {
+  width: 220px; height: 2px; background: rgba(255, 255, 255, 0.08);
+  overflow: hidden; border-radius: 2px;
+}
+.loader-fill {
+  display: block; width: 100%; height: 100%;
+  background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+  transform: scaleX(0); transform-origin: left center;
+}
+.loader-label { font-size: 11px; letter-spacing: 0.4em; color: var(--faint); padding-left: 0.4em; }
+body.loading { overflow: hidden; }
+body.reduced .loader { display: none; }
+body.reduced.loading { overflow: auto; }
+
+/* ---------- 滚动进度条 ---------- */
+
+.progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 160;
+  pointer-events: none;
+}
+.progress-fill {
+  display: block; height: 100%;
+  background: linear-gradient(90deg, var(--cyan), var(--violet), var(--pink));
+  transform: scaleX(0); transform-origin: left center;
+  box-shadow: 0 0 12px rgba(125, 227, 255, 0.55);
+}
+
+/* ---------- 首屏层级与提示 ---------- */
+
+#fx-aurora { z-index: 0; }
+#fx-fluid { position: absolute; inset: 0; width: 100%; height: 100%; display: block; z-index: 1; }
+#fx-particles { z-index: 2; }
+.hero-top, .hero-bottom, .scroll-hint { z-index: 3; }
+body.reduced #fx-fluid { display: none; }
+
+.hero-hint {
+  position: absolute; left: 0; right: 0; top: 12vh; z-index: 3;
+  text-align: center; pointer-events: none;
+  font-size: 11px; letter-spacing: 0.28em; color: rgba(255, 255, 255, 0.22);
+  padding-left: 0.28em;
+}
+
+/* ---------- 滚动大字横幅 ---------- */
+
+.marquee {
+  overflow: hidden; white-space: nowrap;
+  padding: 54px 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: var(--bg);
+}
+.marquee-track {
+  display: inline-flex; align-items: center; gap: 3.2rem;
+  will-change: transform;
+}
+.m-item {
+  font-size: clamp(38px, 5.5vw, 72px); font-weight: 800;
+  letter-spacing: 0.03em; line-height: 1.15;
+  color: var(--ink);
+}
+.m-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(125, 227, 255, 0.5);
+}
+.m-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex: 0 0 auto;
+  background: linear-gradient(135deg, var(--cyan), var(--pink));
+  box-shadow: 0 0 14px rgba(125, 227, 255, 0.7);
+}
+
+/* ---------- 幽灵序号 + 标题拆字 ---------- */
+
+.section-head { position: relative; }
+.ghost-num {
+  position: absolute; top: -0.52em; left: -0.06em; z-index: 0;
+  font-size: clamp(140px, 22vw, 240px); font-weight: 800; line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
+  pointer-events: none; user-select: none;
+}
+.section-head > *:not(.ghost-num) { position: relative; z-index: 1; }
+.ghost-center { left: 50%; transform: translateX(-50%); top: -0.4em; }
+.contact-wrap { position: relative; }
+.contact-wrap > *:not(.ghost-num) { position: relative; z-index: 1; }
+
+.split-title .char { display: inline-block; }
+.split-title { overflow: hidden; }
+
+/* ---------- 作品卡片：3D 倾斜 + 聚光 + 扫光 ---------- */
+
+.works-grid { perspective: 1100px; }
+.work-card { will-change: transform; }
+.work-cover { position: relative; }
+.work-cover::before {
+  content: ""; position: absolute; inset: 0; z-index: 2;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), rgba(125, 227, 255, 0.22), transparent 65%);
+  opacity: 0; transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.work-card:hover .work-cover::before { opacity: 1; }
+.work-cover::after {
+  content: ""; position: absolute; inset: 0; z-index: 3;
+  background: linear-gradient(115deg, transparent 42%, rgba(255, 255, 255, 0.13) 50%, transparent 58%);
+  background-size: 240% 100%;
+  background-position: 130% 0;
+  transition: background-position 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+.work-card:hover .work-cover::after { background-position: -30% 0; }
+.cover-num { z-index: 1; }
+.work-card:hover .work-cover {
+  border-color: rgba(125, 227, 255, 0.5);
+  box-shadow: 0 24px 70px rgba(20, 60, 110, 0.45), 0 0 0 1px rgba(125, 227, 255, 0.12);
+}
+
+/* ---------- 联系区 CTA 呼吸光 ---------- */
+
+.btn-big {
+  position: relative;
+  animation: ctaGlow 3.2s ease-in-out infinite;
+}
+@keyframes ctaGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(125, 227, 255, 0); }
+  50% { box-shadow: 0 0 42px rgba(125, 227, 255, 0.22); }
+}
+.ver-link { color: var(--faint); text-decoration: underline; text-underline-offset: 3px; }
+.ver-link:hover { color: var(--cyan); }
+
+/* ---------- 全局质感：颗粒 + 暗角 ---------- */
+
+.vignette {
+  position: fixed; inset: 0; z-index: 88; pointer-events: none;
+  background: radial-gradient(125% 125% at 50% 42%, transparent 58%, rgba(2, 3, 7, 0.5));
+}
+.grain {
+  position: fixed; inset: -60%; z-index: 89; pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grainJitter 0.9s steps(4) infinite;
+}
+@keyframes grainJitter {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(-2%, 1.4%); }
+  50% { transform: translate(1.6%, -1.2%); }
+  75% { transform: translate(-1.2%, -2%); }
+  100% { transform: translate(0, 0); }
+}
+body.reduced .grain { animation: none; }
+
+/* ---------- 响应式微调 ---------- */
+
+@media (max-height: 780px) {
+  .hero-hint { top: 10vh; }
+}
+@media (max-width: 860px) {
+  .marquee { padding: 36px 0; }
+  .ghost-num { font-size: clamp(110px, 30vw, 180px); }
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>郭建华 · UX 设计师作品集 | V1.0</title>
+  <meta name="description" content="独立设计师作品集：UI/UX、品牌视觉、3D 动效。" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237de3ff'/%3E%3Cstop offset='1' stop-color='%23ff7ac8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='10' fill='url(%23g)'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style-v2.css" />
+  <link rel="stylesheet" href="assets/css/release.css" />
+  <noscript><style>.loader{display:none!important}body.loading{overflow:auto}.hero-word-fallback{display:flex}</style></noscript>
+</head>
+<body class="loading">
+
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <span class="loader-num" id="loader-num">0</span>
+      <span class="loader-bar"><span class="loader-fill" id="loader-fill"></span></span>
+      <span class="loader-label">PORTFOLIO — 2026</span>
+    </div>
+  </div>
+
+  <div class="progress"><span class="progress-fill" id="progress-fill"></span></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="nav-logo" href="#hero" data-hover>
+      <span class="logo-dot"></span>
+      <span class="logo-name">郭建华</span>
+    </a>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#works" data-hover>作品</a>
+      <a href="#about" data-hover>关于</a>
+      <a href="#contact" data-hover>联系</a>
+      <a class="nav-download" href="downloads/portfolio.pdf" download="郭建华-作品集-演示.pdf" data-hover>下载作品集 ↓</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero" id="hero">
+      <canvas id="fx-aurora" aria-hidden="true"></canvas>
+      <canvas id="fx-fluid" aria-hidden="true"></canvas>
+      <canvas id="fx-particles" data-text="作品集" aria-hidden="true"></canvas>
+      <h1 class="sr-only">作品集 — 独立设计师：UI/UX、品牌视觉、3D 动效</h1>
+
+      <div class="hero-top">
+        <p class="overline reveal-overline">PORTFOLIO — 2026</p>
+      </div>
+
+      <div class="hero-word-fallback" aria-hidden="true">作品集</div>
+
+      <div class="hero-bottom">
+        <p class="hero-sub">
+          <span class="line">独立设计师 · UI/UX × 品牌视觉 × 3D 动效</span>
+          <span class="line">用设计与动效，把想法讲成故事</span>
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="downloads/portfolio.pdf" download="郭建华-作品集-演示.pdf" data-hover>下载作品集 ↓</a>
+          <a class="btn btn-ghost" href="#works" data-hover>浏览作品</a>
+        </div>
+        <p class="download-note">演示 PDF · 1 页</p>
+      </div>
+
+      <div class="hero-hint" aria-hidden="true">试试移动鼠标 · 点击文字</div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>滚动探索</span>
+        <span class="scroll-line"></span>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marquee-track">
+        <span class="m-item">UI/UX 设计</span><span class="m-dot"></span>
+        <span class="m-item m-outline">品牌视觉</span><span class="m-dot"></span>
+        <span class="m-item">3D 动效</span><span class="m-dot"></span>
+        <span class="m-item m-outline">创意编码</span><span class="m-dot"></span>
+      </div>
+    </div>
+
+    <section class="section works" id="works">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="ghost-num" aria-hidden="true">01</span>
+          <span class="sec-index">01</span>
+          <h2 class="split-title">精选作品</h2>
+          <p class="sec-note">示例项目 · 内容待更新</p>
+        </div>
+
+        <div class="works-grid">
+          <article class="work-card" data-hover>
+            <div class="work-cover">
+              <div class="work-cover-inner g1"></div>
+              <span class="cover-num">01</span>
+            </div>
+            <div class="work-meta">
+              <h3>智能家居 App 全案设计</h3>
+              <p class="work-tags">UI/UX · 交互设计<span class="work-year">2025</span></p>
+            </div>
+          </article>
+
+          <article class="work-card" data-hover>
+            <div class="work-cover">
+              <div class="work-cover-inner g2"></div>
+              <span class="cover-num">02</span>
+            </div>
+            <div class="work-meta">
+              <h3>「山海」品牌视觉系统</h3>
+              <p class="work-tags">品牌 · VI 设计<span class="work-year">2024</span></p>
+            </div>
+          </article>
+
+          <article class="work-card" data-hover>
+            <div class="work-cover">
+              <div class="work-cover-inner g3"></div>
+              <span class="cover-num">03</span>
+            </div>
+            <div class="work-meta">
+              <h3>电商大促 3D 视觉短片</h3>
+              <p class="work-tags">3D · 动效<span class="work-year">2025</span></p>
+            </div>
+          </article>
+
+          <article class="work-card" data-hover>
+            <div class="work-cover">
+              <div class="work-cover-inner g4"></div>
+              <span class="cover-num">04</span>
+            </div>
+            <div class="work-meta">
+              <h3>数据平台官网设计</h3>
+              <p class="work-tags">Web · 视觉设计<span class="work-year">2026</span></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="ghost-num" aria-hidden="true">02</span>
+          <span class="sec-index">02</span>
+          <h2 class="split-title">关于我</h2>
+        </div>
+
+        <p class="about-statement">
+          <span class="line">我是一名跨界设计师，</span>
+          <span class="line">在界面、品牌与三维之间寻找交点。</span>
+          <span class="line">好的设计是理性与感性的平衡 ——</span>
+          <span class="line">既解决问题，也制造心动。</span>
+        </p>
+
+        <div class="skills">
+          <span class="chip">Figma</span>
+          <span class="chip">Photoshop</span>
+          <span class="chip">Illustrator</span>
+          <span class="chip">Cinema 4D</span>
+          <span class="chip">Blender</span>
+          <span class="chip">After Effects</span>
+          <span class="chip">Principle</span>
+          <span class="chip">动效设计</span>
+          <span class="chip">品牌策略</span>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <canvas id="fx-waves" aria-hidden="true"></canvas>
+      <div class="wrap contact-wrap">
+        <span class="ghost-num ghost-center" aria-hidden="true">03</span>
+        <span class="sec-index">03</span>
+        <h2 class="contact-title">
+          <span class="line">有项目想聊？</span>
+        </h2>
+        <p class="contact-sub">随时欢迎 —— 一起做点有意思的东西。</p>
+        <a class="btn-big magnetic" href="mailto:jianhuaguo798@gmail.com" data-hover>
+          <span class="magnetic-inner">jianhuaguo798@gmail.com</span>
+        </a>
+        <div class="socials"><a href="downloads/portfolio.pdf" download="郭建华-作品集-演示.pdf" data-hover>下载作品集（演示 PDF） ↓</a></div>
+        <p class="footer-note">© 2026 郭建华 · Portfolio V1.0</p>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <script src="assets/js/vendor/gsap.min.js"></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/js/vendor/lenis.min.js"></script>
+  <script src="assets/js/fx-aurora.js"></script>
+  <script src="assets/js/fx-fluid.js"></script>
+  <script src="assets/js/fx-particles-v2.js"></script>
+  <script src="assets/js/fx-waves.js"></script>
+  <script src="assets/js/main-v2.js"></script>
+</body>
+</html>
