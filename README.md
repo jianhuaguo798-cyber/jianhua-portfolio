@@ -1,7 +1,7 @@
 # 郭建华作品网站 · V1.0
 
 基于原 `index-v2.html`：深色极光、粒子聚字、横向滚动大字、作品卡片与联系区。
-此仓库只包含该版本及所需静态资源。没有 Node 安装步骤，不依赖外部 CDN。
+此仓库只包含该版本及所需静态资源。没有 Node 安装步骤，视觉效果不依赖外部 CDN；访客允许统计后才加载 Microsoft Clarity。
 
 - 网站：https://jianhuaguo798-cyber.github.io/jianhua-portfolio/
 - 代码：https://github.com/jianhuaguo798-cyber/jianhua-portfolio
@@ -48,9 +48,9 @@ GitHub Pages 会在推送后自动发布静态资源。首次在仓库 Settings 
 
 示例 PDF 的生成脚本为 `scripts/create_demo_pdf.py`，只有重新生成示例时才需要 `reportlab`。
 
-## 匿名访问统计（待配置）
+## 匿名访问统计
 
-浏览及下载点击事件的接入已准备，配置 Clarity 项目 ID 后生效。配置前不会收集或发送数据。项目创建、查看记录、事件含义以及排除自己的访问，见 [统计说明](docs/analytics.md)。
+已配置 Clarity 项目 `yq9s1l0wx6`，部署后仅在访客允许统计时记录浏览及下载点击。后台：https://clarity.microsoft.com/projects/view/yq9s1l0wx6/ 。查看记录、事件含义以及排除自己的访问，见 [统计说明](docs/analytics.md)。
 
 开发校验：`node scripts/check_analytics.mjs`。本地事件预览使用 `?analytics=debug`，不会发送数据。
 

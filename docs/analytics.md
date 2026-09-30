@@ -1,6 +1,6 @@
 # 匿名访问统计
 
-状态：接入代码已准备，`assets/js/analytics-config.js` 中 `projectId` 仍为空。配置真实项目 ID 并部署前不会收集数据，也不会加载第三方脚本或显示统计选择。
+项目：`yq9s1l0wx6`，已配置到 `assets/js/analytics-config.js`。后台：https://clarity.microsoft.com/projects/view/yq9s1l0wx6/ 。仅在正式域名、访客明确允许统计后加载第三方脚本。首次部署后的后台收数仍需在 Clarity 核验。
 
 ## 接通
 
